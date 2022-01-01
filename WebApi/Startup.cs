@@ -40,7 +40,12 @@ namespace WebApi
 
             var connstring = Configuration.GetConnectionString("DefaultString");
 
-           
+            services.AddCors(option => option.AddPolicy("APIPolicy", builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+            }));
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
