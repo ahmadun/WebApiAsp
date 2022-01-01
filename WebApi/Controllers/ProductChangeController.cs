@@ -64,7 +64,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        [Route("get-by-id")]
+        [Route("getby-id")]
         public async Task<IActionResult> GetTodoItemByIdAsync(int id)
         {
             var result = await _context.GetTodoByIdAsync(id);
